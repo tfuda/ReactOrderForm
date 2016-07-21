@@ -4,12 +4,14 @@ class RadioGroup extends React.Component {
 	constructor(props) {
 		super(props);
 	}
+	
 	render() {
-		let radioOptions = this.props.radioOptions.map(function(radioOption) {
+		let radioOptions = this.props.radioOptions.map(function (radioOption) {
 			return (
 				<RadioOption key={radioOption.value} name={this.props.groupName}
-					value={radioOption.value} label={radioOption.label} selectedOption={this.props.selectedOption}
-					onChange={()=>{this.props.onRadioOptionChange(radioOption.value)}} />
+				             value={radioOption.value} label={radioOption.label}
+				             selectedOption={this.props.selectedOption}
+				             onChange={()=>{this.props.onRadioOptionChange(radioOption.value)}}/>
 			);
 		}, this);
 		return (
@@ -31,5 +33,5 @@ RadioGroup.propTypes = {
 	onRadioOptionChange: React.PropTypes.func.isRequired,
 	selectedOption: React.PropTypes.string.isRequired
 }
-RadioGroup.defaultProps = { legend: ''};
+RadioGroup.defaultProps = {legend: ''};
 export default RadioGroup;

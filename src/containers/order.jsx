@@ -1,9 +1,16 @@
 import {connect} from 'react-redux';
-import {deleteItem, deleteAllItems, changeDonation, changeDeliveryMethod, copyBillingToShipping, inputChange} from '../actions';
+import {
+	deleteItem,
+	deleteAllItems,
+	changeDonation,
+	changeDeliveryMethod,
+	copyBillingToShipping,
+	inputChange
+} from '../actions';
 import OrderForm from '../components/order-form';
 
 const mapStateToProps = (state) => {
-	return { order: state.order };
+	return {order: state.order};
 }
 const mapDispatchToProps = (dispatch) => {
 	return {

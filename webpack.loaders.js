@@ -4,7 +4,7 @@ module.exports = [
 		exclude: /(node_modules|bower_components)/,
 		loaders: ['react-hot', 'babel'],
 	},
-
+	
 	{
 		test: /\.css$/,
 		loader: 'style-loader!css-loader'

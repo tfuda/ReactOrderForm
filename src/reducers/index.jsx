@@ -1,5 +1,14 @@
 import {combineReducers} from 'redux';
-import { DELETE_ITEM, DELETE_ALL_ITEMS, ADD_ITEM, CHANGE_DONATION, CHANGE_PAYMENT_METHOD, CHANGE_DELIVERY_METHOD, COPY_BILLING_TO_SHIPPING, INPUT_CHANGE } from '../actions';
+import {
+	DELETE_ITEM,
+	DELETE_ALL_ITEMS,
+	ADD_ITEM,
+	CHANGE_DONATION,
+	CHANGE_PAYMENT_METHOD,
+	CHANGE_DELIVERY_METHOD,
+	COPY_BILLING_TO_SHIPPING,
+	INPUT_CHANGE
+} from '../actions';
 
 const initialItems = [
 	{
@@ -54,7 +63,7 @@ function itemList(state, action) {
 			// TODO
 			return state;
 		case DELETE_ITEM:
-			let itemList = state.filter(function(item) {
+			let itemList = state.filter(function (item) {
 				return item.name !== action.itemName;
 			});
 			return itemList;
@@ -109,7 +118,9 @@ function order(state = initialOrder, action) {
 
 function calculateItemTotal(itemList) {
 	let itemTotal = 0;
-	itemList.forEach(function(item){ itemTotal += item.total });
+	itemList.forEach(function (item) {
+		itemTotal += item.total
+	});
 	return itemTotal;
 }
 
@@ -117,5 +128,5 @@ function calculateOrderTotal(itemTotal = 0, orderFee = 0, deliveryFee = 0, donat
 	return itemTotal + orderFee + deliveryFee + donationAmount;
 }
 
-const orderApp = combineReducers({ order });
+const orderApp = combineReducers({order});
 export default orderApp
